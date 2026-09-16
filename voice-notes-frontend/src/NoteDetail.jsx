@@ -198,7 +198,7 @@ export default function NoteDetail() {
                   </h4>
                   <audio controls className="w-full h-10 rounded-lg">
                     {/* Note: serving static files requires a backend resource handler. */}
-                    <source src={`http://localhost:8080/${note.audioUrl}`} />
+                    <source src={`${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api', '') : 'http://localhost:8080'}/${note.audioUrl}`} />
                     Your browser does not support the audio element.
                   </audio>
                 </div>
